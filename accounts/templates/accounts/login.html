@@ -1,0 +1,21 @@
+{% extends 'base_layout.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+    <div class="container centered1" style="padding-top: 150px;" >
+          <div class="row justify-content-center">
+            <div class="col-4 me3">
+              <hr class="mt-0 mb-4">
+                <h1 style="text-align: center;">Log in</h1>
+                <form class="site-form" style="color: #c4c3ca" action="{% url 'accounts:login' %}" method="post">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    {% if request.GET.next %}
+                        <input type="hidden" name="next" value="{{ request.GET.next }}" />
+                    {% endif %}
+                    <div class="align"><input type="submit" value="Login" /></div>
+                </form>
+                <p style="text-align: center;">Not got an account? <a href="{% url 'accounts:signup' %}" style="color: White;">Sign Up</a></p>
+                 </div>
+          </div>
+    </div>
+{% endblock %}

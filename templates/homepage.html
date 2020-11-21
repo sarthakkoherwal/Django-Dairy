@@ -1,0 +1,21 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+{% load static %}
+<div class="wrapper" style="padding-top: 50px;">
+    <section class="intro">
+        <div class="container" style="margin-top: 50px;">
+            <div class="row">
+                <div class="col-lg-12">
+                    <br>
+                    <h3>Welcome to Dear Dairy</h3>
+                    <h3>Your own personalized space for writing your thoughts</h3>
+                    <br>
+                    <img src="{% static 'homeLogo.jpg' %}" style="height:400px;" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+    <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-8" style="border: double;
+    padding: 20px;
+    margin-top: 150px;
+    border-radius: 25px;">
+              <hr class="mt-0 mb-4">
+                <div class="create-post">
+                    <h2>What's on your Mind?</h2>
+                    <form class="site-form" action="{% url 'posts:create' %}" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <input type="submit" value="Create">
+                    </form>
+                </div>
+            </div>
+          </div>
+    </div>
+{% endblock %}
+
+</body>
+</html>
